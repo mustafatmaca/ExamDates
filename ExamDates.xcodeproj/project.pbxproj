@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8002290283A6B1900A437F2 /* ExamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A800228F283A6B1900A437F2 /* ExamTableViewCell.swift */; };
+		A8002292283A706500A437F2 /* ExamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8002291283A706500A437F2 /* ExamItem.swift */; };
+		A8002294283A751200A437F2 /* ExamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8002293283A751200A437F2 /* ExamManager.swift */; };
+		A8002296283A7B2900A437F2 /* NotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8002295283A7B2900A437F2 /* NotificationProvider.swift */; };
 		A8ACAD1628390F59004B0C6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACAD1528390F59004B0C6F /* AppDelegate.swift */; };
 		A8ACAD1828390F59004B0C6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACAD1728390F59004B0C6F /* SceneDelegate.swift */; };
 		A8ACAD1D28390F59004B0C6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8ACAD1B28390F59004B0C6F /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A800228F283A6B1900A437F2 /* ExamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableViewCell.swift; sourceTree = "<group>"; };
+		A8002291283A706500A437F2 /* ExamItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamItem.swift; sourceTree = "<group>"; };
+		A8002293283A751200A437F2 /* ExamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamManager.swift; sourceTree = "<group>"; };
+		A8002295283A7B2900A437F2 /* NotificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProvider.swift; sourceTree = "<group>"; };
 		A8ACAD1228390F59004B0C6F /* ExamDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8ACAD1528390F59004B0C6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8ACAD1728390F59004B0C6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 				A8ACAD2328390F5C004B0C6F /* Info.plist */,
 				A8ACAD2D28391B90004B0C6F /* ExamTableViewController.swift */,
 				A8ACAD2F2839219B004B0C6F /* AddExamTableViewController.swift */,
+				A800228F283A6B1900A437F2 /* ExamTableViewCell.swift */,
+				A8002291283A706500A437F2 /* ExamItem.swift */,
+				A8002293283A751200A437F2 /* ExamManager.swift */,
+				A8002295283A7B2900A437F2 /* NotificationProvider.swift */,
 			);
 			path = ExamDates;
 			sourceTree = "<group>";
@@ -143,7 +155,11 @@
 				A8ACAD302839219B004B0C6F /* AddExamTableViewController.swift in Sources */,
 				A8ACAD2E28391B90004B0C6F /* ExamTableViewController.swift in Sources */,
 				A8ACAD1628390F59004B0C6F /* AppDelegate.swift in Sources */,
+				A8002292283A706500A437F2 /* ExamItem.swift in Sources */,
+				A8002290283A6B1900A437F2 /* ExamTableViewCell.swift in Sources */,
+				A8002294283A751200A437F2 /* ExamManager.swift in Sources */,
 				A8ACAD1828390F59004B0C6F /* SceneDelegate.swift in Sources */,
+				A8002296283A7B2900A437F2 /* NotificationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

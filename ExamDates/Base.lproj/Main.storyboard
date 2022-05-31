@@ -137,6 +137,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fU6-hb-WDf">
                                                     <rect key="frame" x="345" y="11" width="51" height="22"/>
+                                                    <connections>
+                                                        <action selector="remindMeSwitchValueChanged:" destination="tAM-Lc-0hM" eventType="valueChanged" id="hff-wg-UcX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -197,6 +200,25 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="216" id="rZ4-mV-XA0">
+                                        <rect key="frame" x="0.0" y="401.5" width="414" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZ4-mV-XA0" id="DDv-Hy-68i">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrB-Ne-s2a">
+                                                    <rect key="frame" x="20" y="11" width="374" height="194"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QrB-Ne-s2a" firstAttribute="leading" secondItem="DDv-Hy-68i" secondAttribute="leadingMargin" id="5uw-vx-5cB"/>
+                                                <constraint firstItem="QrB-Ne-s2a" firstAttribute="top" secondItem="DDv-Hy-68i" secondAttribute="topMargin" id="q99-od-88E"/>
+                                                <constraint firstItem="QrB-Ne-s2a" firstAttribute="trailing" secondItem="DDv-Hy-68i" secondAttribute="trailingMargin" id="sfy-dw-9tT"/>
+                                                <constraint firstItem="QrB-Ne-s2a" firstAttribute="bottom" secondItem="DDv-Hy-68i" secondAttribute="bottomMargin" id="uuo-Iv-Dj4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -223,6 +245,7 @@
                         <outlet property="addBarButton" destination="N0r-aC-43f" id="U1t-HW-LWq"/>
                         <outlet property="dateLabel" destination="YXS-d1-b9Z" id="QiZ-kX-qxY"/>
                         <outlet property="datePicker" destination="qXF-RY-a4e" id="ZJh-dT-4v6"/>
+                        <outlet property="remainTimePicker" destination="QrB-Ne-s2a" id="xIr-DY-ja1"/>
                         <outlet property="remindMeSwitch" destination="fU6-hb-WDf" id="BE1-4e-imA"/>
                         <outlet property="titleTextField" destination="1B2-O6-uSZ" id="9kD-L2-bbU"/>
                         <segue destination="Mwo-fY-lIY" kind="unwind" identifier="unwindToExams" unwindAction="unwindFromAddExam:" id="DC8-eV-4SM"/>

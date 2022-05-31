@@ -13,6 +13,7 @@ class ExamTableViewCell : UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tagView: UIView!
     
+    //Verilen ExamItem'ın özelliklerine göre cell'in özelliklerini belirler.
     func prepare(with exam: ExamItem) {
         titleLabel.text = exam.title
         tagView.backgroundColor = exam.isCompleted ? .orange : .lightGray

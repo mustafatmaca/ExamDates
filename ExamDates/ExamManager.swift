@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Exam'ların yönetimini sağlayan sınıf. Silme, oluşturma, hepsini getirme
 class ExamManager {
     private let dataSourceURL : URL
     private var allExams: [ExamItem] {
@@ -41,10 +42,12 @@ class ExamManager {
         dataSourceURL = examsPath
     }
     
+    //allExams listesini döndürür.
     func getAllExams() -> [ExamItem] {
         return allExams
     }
     
+    //allExams listesine ExamItem'ı insert eder. Notification oluşturur.
     func create(exam: ExamItem) {
         allExams.insert(exam, at: 0)
         
@@ -53,12 +56,14 @@ class ExamManager {
         }
     }
     
+    //Sınavın tamamlanıp tamamlanmadığını set eder.
     func setComplete(exam: ExamItem) {
         if let index = allExams.firstIndex(where: { $0.id == exam.id }) {
             allExams[index].isCompleted.toggle()
         }
     }
     
+    //Sınavı allExams'dan siler, Notification'ı iptal eder.
     func delete(exam: ExamItem) {
         if let index = allExams.firstIndex(where: { $0.id == exam.id }) {
             allExams.remove(at: index)

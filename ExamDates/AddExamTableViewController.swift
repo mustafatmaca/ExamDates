@@ -14,7 +14,6 @@ class AddExamTableViewController : UITableViewController {
     
     let dateLabelCellIndexPath = IndexPath(row: 1, section: 1)
     let datePickerCellIndexPath = IndexPath(row: 2, section: 1)
-    var isDatePickerShow = false
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -29,16 +28,20 @@ class AddExamTableViewController : UITableViewController {
         var dateComponents = DateComponents()
         dateComponents.setValue(2, for: .minute)
         
+        //datePicker'daki minimum tarihi belirler.
         datePicker.minimumDate = Calendar.current.date(byAdding: dateComponents, to: Date())!
         updateDateViews()
     }
     
+    
+    //ekran açıldığında textField'ın seçilmesini sağlar.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         titleTextField.becomeFirstResponder()
     }
     
+    //remindMeSwitch durumuna göre dateLabelCell ve datePickerCell'i ölçeklendirmeyi sağlar.
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case dateLabelCellIndexPath:
@@ -48,7 +51,7 @@ class AddExamTableViewController : UITableViewController {
                 return 0
             }
         case datePickerCellIndexPath:
-            if isDatePickerShow && remindMeSwitch.isOn {
+            if remindMeSwitch.isOn {
                 return 216
             } else {
                 return 0
@@ -58,15 +61,7 @@ class AddExamTableViewController : UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if indexPath == datePickerCellIndexPath {
-            isDatePickerShow.toggle()
-            updateCells()
-        }
-    }
-    
+    //dateLabel'a seçilen tarih verilir.
     func updateDateViews() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -75,25 +70,17 @@ class AddExamTableViewController : UITableViewController {
         dateLabel.text = dateFormatter.string(from: datePicker.date)
     }
     
-    func updateCells() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
-    
-    
+    //datePickerValue değiştiğinde updateDateViews methodunu çağırır.
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         updateDateViews()
     }
-    @IBAction func remindMeSwitchValueChanged(_ sender: UISwitch) {
-        if !sender.isOn {
-            isDatePickerShow = true
-        }
-        
-        updateCells()
-    }
+    
+    //cancel Butonuna tıklandığında sayfayı dismiss eder.
     @IBAction func cancelBarButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    //done butonuna tıklandığında textField'tan text'i datePicker'dan date'i alıp yeni bir ExamItem öğesi oluşturur.
     @IBAction func addBarButtonTapped(_ sender: UIBarButtonItem) {
         var date : Date?
         
@@ -108,6 +95,7 @@ class AddExamTableViewController : UITableViewController {
     }
 }
 
+//textField boş olmadığında done butonunu aktif hale getiren extension
 extension AddExamTableViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {

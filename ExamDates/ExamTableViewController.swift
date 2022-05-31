@@ -11,10 +11,12 @@ class ExamTableViewController : UITableViewController {
     
     var examManager = ExamManager()
     
+    //numberOfRowsInSwction methodu: tableView'de kaç tane row olucağını belirler.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return examManager.getAllExams().count
     }
     
+    //cellForRowAt methodu: tableView'deki cell içeriğini belirler.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExamCell") as? ExamTableViewCell else {
             return UITableViewCell()
@@ -26,6 +28,7 @@ class ExamTableViewController : UITableViewController {
         return cell
     }
     
+    //leadingSwipe methodu: cell'deki sınavın tamamlanıp tamamlanmadığını soldan kaydırarak belirtmeyi sağlar.
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let selectedExam = examManager.getAllExams()[indexPath.row]
         
@@ -44,6 +47,7 @@ class ExamTableViewController : UITableViewController {
         return UISwipeActionsConfiguration(actions: [completeAction])
     }
     
+    //trailingSwipe methodu: cell'deki sınavı sağdan kaydırarak silmeye yarar.
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let selectedExam = examManager.getAllExams()[indexPath.row]
         

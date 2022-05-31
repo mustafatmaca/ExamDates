@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class NotificationProvider {
+    
+    //Cihaz bildirim izni olup olamdığını kontrol eder ve izin alır ardından createNotification methodunu çağırır.
     static func scheduleNotification(title: String, date: Date, id: String) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
@@ -24,11 +26,13 @@ class NotificationProvider {
         }
     }
     
+    //Notification'ı kaldırır.
     static func cancelNotification(_ identifiers: String) {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: [identifiers])
     }
     
+    //Yeni bir Notification oluşturur.
     static func createNotification(title: String, date: Date, id: String) {
         let content = UNMutableNotificationContent()
         content.title = title

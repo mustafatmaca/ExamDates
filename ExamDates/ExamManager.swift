@@ -52,7 +52,30 @@ class ExamManager {
         allExams.insert(exam, at: 0)
         
         if let date = exam.date {
-            NotificationProvider.scheduleNotification(title: exam.title, date: exam.date!, id: exam.id)
+            var examDate = exam.date
+            
+            switch exam.remainTime {
+            case "5 Min":
+                examDate?.addTimeInterval(-5 * 60)
+            case "10 Min":
+                examDate?.addTimeInterval(-10 * 60)
+            case "15 Min":
+                examDate?.addTimeInterval(-15 * 60)
+            case "30 Min":
+                examDate?.addTimeInterval(-30 * 60)
+            case "45 Min":
+                examDate?.addTimeInterval(-45 * 60)
+            case "1 Hour":
+                examDate?.addTimeInterval(-60 * 60)
+            case "1 Hour 30 Min":
+                examDate?.addTimeInterval(-90 * 60)
+            case "2 Hour":
+                examDate?.addTimeInterval(-120 * 60)
+            default:
+                examDate?.addTimeInterval(0)
+            }
+            NotificationProvider.scheduleNotification(title: exam.title, date: examDate!, id: exam.id)
+            
         }
     }
     

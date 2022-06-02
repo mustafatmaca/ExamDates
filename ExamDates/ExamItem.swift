@@ -11,5 +11,6 @@ struct ExamItem : Codable {
     var id = UUID().uuidString
     var title : String
     var date : Date?
+    var remainTime : String?
     var isCompleted = false
 }

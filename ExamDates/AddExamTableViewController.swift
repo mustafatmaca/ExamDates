@@ -13,7 +13,7 @@ class AddExamTableViewController : UITableViewController, UIPickerViewDelegate, 
     let examManager = ExamManager()
     
     var remainTime : String?
-    let source = ["5 Min", "10 Min", "15 Min", "30 Min", "45 Min", "1 Hour", "1 Hour 30 Min", "2 Hour"]
+    let source = ["In Time","5 Min", "10 Min", "15 Min", "30 Min", "45 Min", "1 Hour", "1 Hour 30 Min", "2 Hour"]
     
     let dateLabelCellIndexPath = IndexPath(row: 1, section: 1)
     let datePickerCellIndexPath = IndexPath(row: 2, section: 1)

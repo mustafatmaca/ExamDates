@@ -10,7 +10,7 @@ import Foundation
 //Exam'ların yönetimini sağlayan sınıf. Silme, oluşturma, hepsini getirme
 class ExamManager {
     private let dataSourceURL : URL
-    private var allExams: [ExamItem] {
+    private var allExams: [ExamItem] {// get-set uygulamadaki verileri çeker ve set eder.
         get {
             do {
                 let decoder = PropertyListDecoder()
@@ -35,6 +35,7 @@ class ExamManager {
         }
     }
     
+    //ExamManager objesi oluşturulduğunda çalışır. Verilerin kayıtyolu bulunur.
     init() {
         let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask) [0]
         let examsPath = documentsPath.appendingPathComponent("exams").appendingPathExtension("plist")
